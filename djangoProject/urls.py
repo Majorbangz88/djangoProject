@@ -22,6 +22,8 @@ admin.site.site_header = 'Tweeter Admin Portal'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("__debug__/", include("debug_toolbar.urls")),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),
     path('playground/', include('playground.urls')),
     path('tweets/', include("tweet.url")),
 ]

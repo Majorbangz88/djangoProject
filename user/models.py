@@ -9,5 +9,5 @@ class TweeterUser(AbstractUser):
 
 
 class Profile(models.Model):
-    location = models.CharField(max_length=200)
-    tweeter_user = models.OneToOneField(TweeterUser, on_delete=models.CASCADE)
+    location = models.CharField(max_length=200, null=True, blank=True)
+    tweeter_user = models.OneToOneField(TweeterUser, on_delete=models.CASCADE, primary_key=True)
